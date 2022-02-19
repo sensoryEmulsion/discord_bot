@@ -19,9 +19,10 @@ tasks.load(bot)
 @tasks.task(s=30, pass_app=True)
 async def ce30secs(bot):
     global status
-    user_info = twitch.get_streams(user_login=['asmongold'])
+    tuser = 'viichan6'
+    user_info = twitch.get_streams(user_login=[tuser])
     json_data = json.dumps(user_info)
-    tuser = 'asmongold'
+    
     if 'id' in json_data:
         if status != 'live':
             print(status)
